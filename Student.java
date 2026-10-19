@@ -1,25 +1,25 @@
 public class Student {
     // data
-    private int StudentId;
-    private String Name;
+    private int studentId;
+    private String name;
     private int mathematicsMarks;
     private int physicsMarks;
     private int chemistryMarks;
 
     // getters & setters
 
-    public void setStudentId(int StudentId){
-        this.StudentId=StudentId;
+    public void setStudentId(int studentId){
+        this.studentId=studentId;
     }
     public int getStudentId(){
-        return this.StudentId;
+        return this.studentId;
     }
 
-    public void setName(String Name){
-        this.Name=Name;
+    public void setName(String name){
+        this.name=name;
     }
     public String getName(){
-        return this.Name;
+        return this.name;
     }
 
     public void setMathematicsMarks(int mathematicsMarks){
@@ -45,9 +45,11 @@ public class Student {
     }
 
     // constructor
-    public Student(int StudentId,String Name,int mathematicsMarks,int physicsMarks,int chemistryMarks){
-        this.StudentId=StudentId;
-        this.Name=Name;
+    public Student(int studentId,String name,int mathematicsMarks,int physicsMarks,int chemistryMarks){
+
+        // arguments-supplioed when object is initialized
+        this.studentId=studentId;
+        this.name=name;
         this.mathematicsMarks=mathematicsMarks;
         this.physicsMarks=physicsMarks;
         this.chemistryMarks=chemistryMarks;
@@ -55,23 +57,26 @@ public class Student {
 
     // methods-
     // 1. Calculate total marks.
-    public void totalMarks(int mathematicsMarks,int physicsMarks,int chemistryMarks){
-        System.out.println("Total Marks"+":"+(mathematicsMarks+physicsMarks+chemistryMarks));
+    public int calculateTotalMarks(){
+        return mathematicsMarks+chemistryMarks+physicsMarks;
     }
     // 2. Calculate average marks.
-    public void averageMarks(int mathematicsMarks,int physicsMarks,int chemistryMarks){
-        System.out.println("Average Marks"+":"+(mathematicsMarks+physicsMarks+chemistryMarks)/3);
+    public double calculateAverageMarks(){
+        return (mathematicsMarks+physicsMarks+chemistryMarks)/3.0;
     }
     // 3. Display student details and results.
-    public void Studentdetails(int StudentId,String Name,int mathematicsMarks,int physicsMarks,int chemistryMarks){
+    public void displayStudentdetails(){
        System.out.println("======Student Details======");
         System.out.println("Student Id:"+getStudentId());
         System.out.println("Name:"+getName());
         System.out.println();
         System.out.println("===== Academic Results =====");
-        System.out.println("Mathematics"+getMathematicsMarks());
-        System.out.println("Physics"+getphysicsMarks());
-        System.out.println("Chemistry"+getchemistryMarks());
+        System.out.println("Mathematics: "+getMathematicsMarks());
+        System.out.println("Physics: "+getphysicsMarks());
+        System.out.println("Chemistry: "+getchemistryMarks());
+        System.out.println();
+        System.out.println("Total Marks: " + calculateTotalMarks());
+        System.out.println("Average Marks: " + calculateAverageMarks());
 
     }
 
