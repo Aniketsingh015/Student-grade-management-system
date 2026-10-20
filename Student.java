@@ -9,6 +9,9 @@ public class Student {
     // getters & setters
 
     public void setStudentId(int studentId){
+        if(studentId<1){
+            throw new IllegalArgumentException("id is not valid");
+        }
         this.studentId=studentId;
     }
     public int getStudentId(){
@@ -16,6 +19,7 @@ public class Student {
     }
 
     public void setName(String name){
+        if(name==null||name.isBlank())throw new IllegalArgumentException("name is null");
         this.name=name;
     }
     public String getName(){
@@ -23,6 +27,9 @@ public class Student {
     }
 
     public void setMathematicsMarks(int mathematicsMarks){
+        if(mathematicsMarks<0 || mathematicsMarks>100){
+            throw new IllegalArgumentException("the marks is invalid re-enter");
+        }
         this.mathematicsMarks=mathematicsMarks;
     }
     public int getMathematicsMarks(){
@@ -30,6 +37,9 @@ public class Student {
     }
 
     public void setphysicsMarks(int physicsMarks){
+        if(physicsMarks<0 || physicsMarks>100){
+            throw new IllegalArgumentException("the marks is invalid re-enter");
+        }
         this.physicsMarks=physicsMarks;
     }
     public int getphysicsMarks(){
@@ -38,6 +48,9 @@ public class Student {
 
 
     public void setchemistryMarks(int chemistryMarks){
+        if(chemistryMarks<0 || chemistryMarks>100){
+            throw new IllegalArgumentException("the marks is invalid re-enter");
+        }
         this.chemistryMarks=chemistryMarks;
     }
     public int getchemistryMarks(){
@@ -47,9 +60,24 @@ public class Student {
     // constructor
     public Student(int studentId,String name,int mathematicsMarks,int physicsMarks,int chemistryMarks){
 
+        // validations for marks
         if(mathematicsMarks<0 || mathematicsMarks>100){
             throw new IllegalArgumentException("the marks is invalid re-enter");
         }
+        if(physicsMarks<0 || physicsMarks>100){
+            throw new IllegalArgumentException("the marks is invalid re-enter");
+        }
+        if(chemistryMarks<0 || chemistryMarks>100){
+            throw new IllegalArgumentException("the marks is invalid re-enter");
+        }
+
+        // validation for student id
+        if(studentId<1){
+            throw new IllegalArgumentException("id is not valid");
+        }
+
+        // validate name
+        if(name==null||name.isBlank())throw new IllegalArgumentException("name is null");
 
         // arguments-supplioed when object is initialized
         this.studentId=studentId;
