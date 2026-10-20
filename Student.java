@@ -47,6 +47,10 @@ public class Student {
     // constructor
     public Student(int studentId,String name,int mathematicsMarks,int physicsMarks,int chemistryMarks){
 
+        if(mathematicsMarks<0 || mathematicsMarks>100){
+            throw new IllegalArgumentException("the marks is invalid re-enter");
+        }
+
         // arguments-supplioed when object is initialized
         this.studentId=studentId;
         this.name=name;
