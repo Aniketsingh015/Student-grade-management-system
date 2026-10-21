@@ -27,9 +27,8 @@ public class Student {
     }
 
     public void setMathematicsMarks(int mathematicsMarks){
-        if(mathematicsMarks<0 || mathematicsMarks>100){
-            throw new IllegalArgumentException("the marks is invalid re-enter");
-        }
+        validateMarks(mathematicsMarks, "mathematicsMarks");
+
         this.mathematicsMarks=mathematicsMarks;
     }
     public int getMathematicsMarks(){
@@ -37,9 +36,7 @@ public class Student {
     }
 
     public void setphysicsMarks(int physicsMarks){
-        if(physicsMarks<0 || physicsMarks>100){
-            throw new IllegalArgumentException("the marks is invalid re-enter");
-        }
+        validateMarks(physicsMarks, "physicsMarks");
         this.physicsMarks=physicsMarks;
     }
     public int getphysicsMarks(){
@@ -48,9 +45,7 @@ public class Student {
 
 
     public void setchemistryMarks(int chemistryMarks){
-        if(chemistryMarks<0 || chemistryMarks>100){
-            throw new IllegalArgumentException("the marks is invalid re-enter");
-        }
+        validateMarks(chemistryMarks, "chemistryMarks");
         this.chemistryMarks=chemistryMarks;
     }
     public int getchemistryMarks(){
@@ -61,15 +56,9 @@ public class Student {
     public Student(int studentId,String name,int mathematicsMarks,int physicsMarks,int chemistryMarks){
 
         // validations for marks
-        if(mathematicsMarks<0 || mathematicsMarks>100){
-            throw new IllegalArgumentException("the marks is invalid re-enter");
-        }
-        if(physicsMarks<0 || physicsMarks>100){
-            throw new IllegalArgumentException("the marks is invalid re-enter");
-        }
-        if(chemistryMarks<0 || chemistryMarks>100){
-            throw new IllegalArgumentException("the marks is invalid re-enter");
-        }
+        validateMarks(chemistryMarks, "chemistryMarks");
+        validateMarks(physicsMarks, "physicsMarks");
+        validateMarks(mathematicsMarks, "mathematicsMarks");
 
         // validation for student id
         if(studentId<1){
@@ -110,6 +99,12 @@ public class Student {
         System.out.println("Total Marks: " + calculateTotalMarks());
         System.out.println("Average Marks: " + calculateAverageMarks());
 
+    }
+
+    public void validateMarks(int marks,String subject){
+        if(marks<0 || marks>100){
+            throw new IllegalArgumentException("marks invalid");
+        }
     }
 
 
