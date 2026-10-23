@@ -54,26 +54,26 @@ public class Student {
 
     // constructor
     public Student(int studentId,String name,int mathematicsMarks,int physicsMarks,int chemistryMarks){
+        //validations have been added in setters so no need in constructor
+        // // validations for marks
+        // validateMarks(chemistryMarks, "chemistryMarks");
+        // validateMarks(physicsMarks, "physicsMarks");
+        // validateMarks(mathematicsMarks, "mathematicsMarks");
 
-        // validations for marks
-        validateMarks(chemistryMarks, "chemistryMarks");
-        validateMarks(physicsMarks, "physicsMarks");
-        validateMarks(mathematicsMarks, "mathematicsMarks");
+        // // validation for student id
+        // if(studentId<1){
+        //     throw new IllegalArgumentException("id is not valid");
+        // }
 
-        // validation for student id
-        if(studentId<1){
-            throw new IllegalArgumentException("id is not valid");
-        }
-
-        // validate name
-        if(name==null||name.isBlank())throw new IllegalArgumentException("name is null");
+        // // validate name
+        // if(name==null||name.isBlank())throw new IllegalArgumentException("name is null");
 
         // arguments-supplioed when object is initialized
-        this.studentId=studentId;
-        this.name=name;
-        this.mathematicsMarks=mathematicsMarks;
-        this.physicsMarks=physicsMarks;
-        this.chemistryMarks=chemistryMarks;
+        setStudentId(studentId);
+        setName(name);;
+        setMathematicsMarks(mathematicsMarks);;
+        setphysicsMarks(physicsMarks);;
+        setchemistryMarks(chemistryMarks);;
     }
 
     // methods-
