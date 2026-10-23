@@ -35,20 +35,20 @@ public class Student {
         return this.mathematicsMarks;
     }
 
-    public void setphysicsMarks(int physicsMarks){
+    public void setPhysicsMarks(int physicsMarks){
         validateMarks(physicsMarks, "physicsMarks");
         this.physicsMarks=physicsMarks;
     }
-    public int getphysicsMarks(){
+    public int getPhysicsMarks(){
         return this.physicsMarks;
     }
 
 
-    public void setchemistryMarks(int chemistryMarks){
+    public void setChemistryMarks(int chemistryMarks){
         validateMarks(chemistryMarks, "chemistryMarks");
         this.chemistryMarks=chemistryMarks;
     }
-    public int getchemistryMarks(){
+    public int getChemistryMarks(){
         return this.chemistryMarks;
     }
 
@@ -71,9 +71,9 @@ public class Student {
         // arguments-supplioed when object is initialized
         setStudentId(studentId);
         setName(name);;
-        setMathematicsMarks(mathematicsMarks);;
-        setphysicsMarks(physicsMarks);;
-        setchemistryMarks(chemistryMarks);;
+        setMathematicsMarks(mathematicsMarks);
+        setPhysicsMarks(physicsMarks);
+        setChemistryMarks(chemistryMarks);
     }
 
     // methods-
@@ -93,17 +93,17 @@ public class Student {
         System.out.println();
         System.out.println("===== Academic Results =====");
         System.out.println("Mathematics: "+getMathematicsMarks());
-        System.out.println("Physics: "+getphysicsMarks());
-        System.out.println("Chemistry: "+getchemistryMarks());
+        System.out.println("Physics: "+getPhysicsMarks());
+        System.out.println("Chemistry: "+getChemistryMarks());
         System.out.println();
         System.out.println("Total Marks: " + calculateTotalMarks());
         System.out.println("Average Marks: " + calculateAverageMarks());
 
     }
 
-    public void validateMarks(int marks,String subject){
+    private void validateMarks(int marks,String subject){
         if(marks<0 || marks>100){
-            throw new IllegalArgumentException("marks invalid");
+            throw new IllegalArgumentException("nust be>0 or <100");
         }
     }
 
