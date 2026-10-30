@@ -10,4 +10,15 @@ public class StudentManager {
         }
         students.put(id,student);
     }
+
+    public Student findById(int id){
+        Student student =students.get(id);
+        if(student==null){
+            throw new IllegalArgumentException("Student not found");
+        }
+        System.out.println("student exist");
+        return student;
+
+
+    }
 }
