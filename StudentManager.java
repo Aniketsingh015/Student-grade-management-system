@@ -60,4 +60,11 @@ public class StudentManager {
     }
 
 
+    // Requirement 7: Search and Display a Student by ID
+    public void searchAndDisplay(int id){
+        Student student=findById(id);
+        student.displayStudentdetails();
+    }
+
+
 }
