@@ -98,12 +98,29 @@ public class Student {
         System.out.println();
         System.out.println("Total Marks: " + calculateTotalMarks());
         System.out.println("Average Marks: " + calculateAverageMarks());
+        System.out.println("Grade is:"+calculateGrade());
 
     }
 
     private void validateMarks(int marks,String subject){
         if(marks<0 || marks>100){
             throw new IllegalArgumentException("nust be>0 or <100");
+        }
+    }
+
+    // Let’s add a grade system based on a student’s average marks.
+    public String calculateGrade(){
+        double average = calculateAverageMarks();
+        if(average>=90 ){
+            return "A" ;
+        }else if(average>=80){
+            return "B";
+        }else if(average>=70){
+            return "C";
+        }else if(average>=60){
+            return "D";
+        }else{
+            return "E";
         }
     }
 

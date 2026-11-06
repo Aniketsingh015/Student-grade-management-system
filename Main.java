@@ -13,10 +13,12 @@ public class Main{
         manager.addStudent(s2);
         manager.addStudent(s3);
         
-        manager.displayAllStudents();
-        manager.updateStudentsMarks(101, "chemistry", 45);
+        // manager.displayAllStudents();
+        // manager.updateStudentsMarks(101, "chemistry", 45);
 
-        manager.displayAllStudents();
+        // manager.displayAllStudents();
+        manager.searchAndDisplay(101);
+
         
     }
 }
