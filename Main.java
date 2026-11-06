@@ -14,8 +14,9 @@ public class Main{
         manager.addStudent(s3);
         
         manager.displayAllStudents();
+        manager.updateStudentsMarks(101, "chemistry", 45);
 
-        manager.removeStudent(101);
+        manager.displayAllStudents();
         
     }
 }

@@ -46,4 +46,18 @@ public class StudentManager {
     }
 
 
+    public void updateStudentsMarks(int id,String subject,int marks){
+        Student student=findById(id);
+        if(subject.equalsIgnoreCase ("mathematics")){
+            student.setMathematicsMarks(marks);
+        }else if(subject.equalsIgnoreCase ("physics")){
+            student.setPhysicsMarks(marks);
+        }else if(subject.equalsIgnoreCase("chemistry")){
+            student.setChemistryMarks(marks);
+        }else{
+            throw new IllegalArgumentException("Invalid subject");
+        }
+    }
+
+
 }
