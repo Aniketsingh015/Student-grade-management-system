@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 public class StudentManager {
     private final Map<Integer,Student>students=new HashMap<>();
 
@@ -101,4 +100,19 @@ public class StudentManager {
         return markLowest;
 
     } 
+
+    // 10 requirement: Find all students scoring above 80%
+    // as we have to return many studnets we will implemetn list to return them 
+
+    public List<Student> findStudentsAbove80(){
+        List<Student>result=new ArrayList<>();
+        for(Student student : students.values()){
+            double avg=student.calculateAverageMarks();
+
+            if(avg>80){
+                result.add(student);
+            }
+        }
+        return result;
+    }
 }
