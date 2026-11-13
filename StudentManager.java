@@ -67,4 +67,22 @@ public class StudentManager {
     }
 
 
+    //Requirement 8: We want to identify the student who has the highest total marks.
+
+    public Student topperStudent(){
+        int highestMarks=-1;
+        Student topper=null;
+        for(Student student:students.values()){
+            int total=student.calculateTotalMarks();
+
+            if(total>highestMarks){
+                highestMarks=total;
+                topper=student;
+            }
+
+        }
+        return topper;
+    }
+
+    // Requirement 9: Find the student with the lowest marks
 }
