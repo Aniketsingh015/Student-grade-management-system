@@ -85,4 +85,20 @@ public class StudentManager {
     }
 
     // Requirement 9: Find the student with the lowest marks
+
+    public Student lowStudent(){
+        int lowest=Integer.MAX_VALUE;
+        Student markLowest=null;
+
+        for(Student student:students.values()){
+            int total=student.calculateTotalMarks();
+
+            if(total<lowest){
+                lowest=total;
+                markLowest=student;
+            }
+        }
+        return markLowest;
+
+    } 
 }
