@@ -115,4 +115,17 @@ public class StudentManager {
         }
         return result;
     }
+
+    // 11.requirement: Find students by grade-Suppose we want to find every student who received grade A.
+    public List<Student> findByGrade(String requiredGrade){
+        List<Student>result=new ArrayList<>();
+        for(Student student:students.values()){
+            String grade=student.calculateGrade();
+
+            if(grade.equalsIgnoreCase(requiredGrade)){
+                result .add(student);
+            }
+        }
+        return result;
+    }
 }

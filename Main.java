@@ -20,6 +20,8 @@ public class Main{
         manager.searchAndDisplay(101);
        System.out.println(manager.topperStudent()); 
 
+       manager.findByGrade("B");
+
         
     }
 }
