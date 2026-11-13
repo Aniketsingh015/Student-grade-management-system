@@ -128,4 +128,16 @@ public class StudentManager {
         }
         return result;
     }
+
+
+    // Requirement 12: Update a student’s name using Student ID
+    public void updateStudentName(int id,String name){
+        // can use the direct function of find by id which we have implemented 
+        Student student=students.get(id);
+        if(student==null){
+            System.out.println("No student present by this id");
+        }else{
+            student.setName(name);
+        }
+    }
 }
