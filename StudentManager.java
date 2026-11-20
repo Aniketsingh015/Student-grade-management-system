@@ -140,4 +140,36 @@ public class StudentManager {
             student.setName(name);
         }
     }
+
+    // Requirement 13: Remove students based on their grade
+    // for this there are 2methods keep in mind that whenever we are directly itterating over map we can retrieve the value but we cannot modify
+    //any values in map we have different approach of that one to use itterator  , 2nd)use enhanced for loop keep the id in variable and after outside change it 
+
+    public void removeStudentOnGrade(String requireGrade){
+        Iterator<Student>iterator=students.values().iterator();
+        while(iterator.hasNext()){
+            Student student=iterator.next();
+
+            if(student.calculateGrade().equalsIgnoreCase(requireGrade)){
+                iterator.remove();
+            }
+        }
+
+    }
+
+    // Requirement 14: Count students by grade
+    public void countByGrade(){
+        Map<String, Integer> gradeCount = new HashMap<>();
+
+        for(Student student:students.values()){
+            String grade=student.calculateGrade();
+            gradeCount.put(grade,gradeCount.getOrDefault(grade,0)+1);
+        }
+        for (Map.Entry<String, Integer> entry : gradeCount.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+    }
+
+
+    
 }
