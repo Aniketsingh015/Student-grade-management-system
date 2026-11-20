@@ -170,6 +170,26 @@ public class StudentManager {
         }
     }
 
+    // Requirement 15: Find the most common grade.
+    public String mostCommonGrade(){
+        Map<String,Integer>gradeCount=new HashMap<>();
+        int maxValue=0;
+        String maxGrade=null;
+        for(Student student:students.values()){
+            String grade=student.calculateGrade();
+            gradeCount.put(grade,gradeCount.getOrDefault(grade, 0)+1);
+        }
+        for (Map.Entry<String, Integer> entry : gradeCount.entrySet()) {
+            String grade = entry.getKey();
+            int count = entry.getValue();
+            if(count>maxValue){
+                maxValue=count;
+                maxGrade=grade;
+            }
+        }
+        return maxGrade;
+    }
 
-    
+
+
 }
