@@ -202,7 +202,17 @@ public class StudentManager {
         return result;
     }
 
-    
+    // Requirement 17 — Search students by name
+    public Student searchByName(String Name){
+        for(Student student:students.values()){
+            
+            if(student.getName().equalsIgnoreCase(Name)){
+                return student;
+            }
+        }
+        return null;
+        
+    }
 
 
 
