@@ -214,6 +214,17 @@ public class StudentManager {
         
     }
 
+    // Requirement 18 — Count students whose average marks exceed a given threshold
+    public int calculateUsingThreshold(double threshold){
+        int count=0;
+        for(Student student:students.values()){
+            if(student.calculateAverageMarks()>=threshold){
+                count=count+1;
+            }
+        }
+        return count;
+    }
+
 
 
 }
