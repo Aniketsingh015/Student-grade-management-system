@@ -190,6 +190,20 @@ public class StudentManager {
         return maxGrade;
     }
 
+    // Requirement 16 — Find student names by grade.
+    public List<String>namesByGrade(String requiredGrade){
+        ArrayList<String>result=new ArrayList<>();
+        for(Student student:students.values()){
+            String grade=student.calculateGrade();
+            if(grade.equalsIgnoreCase(requiredGrade)){
+                result.add(student.getName());
+            }
+        }
+        return result;
+    }
+
+    
+
 
 
 }
