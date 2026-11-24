@@ -225,6 +225,33 @@ public class StudentManager {
         return count;
     }
 
+    // Requirement 19 — Find the second-highest scorer
+    public Student secondHighestScorer(){
+        int first=Integer.MIN_VALUE;
+        Student highestScorer=null;
+        int second=Integer.MIN_VALUE;
+        Student secondScorer=null;
+
+        for(Student student:students.values()){
+            int marks=student.calculateTotalMarks();
+            if(marks>first){
+                second=first;
+                secondScorer=highestScorer;
+                first=marks;
+                highestScorer=student;
+                
+            }else if (marks>second && first>marks){
+                second=marks;
+                secondScorer=student;
+
+            }
+
+        
+
+        }
+        return secondScorer;
+    }
+
 
 
 }
