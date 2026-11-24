@@ -262,7 +262,17 @@ public class StudentManager {
         return set;
     }
 
-    // 
+    // Requirement 21 — Find students whose names start with a particular character
+    public List<Student>nameWithParticularChar(String characterReq){
+        List<Student>result=new ArrayList<>();
+        for(Student student:students.values()){
+            
+            if(student.getName().toLowerCase().startsWith(characterReq.toLowerCase())){
+                result.add(student);
+            }
+        }
+        return result;
+    }
 
 
 
