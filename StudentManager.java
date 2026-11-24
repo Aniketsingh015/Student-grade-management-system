@@ -252,6 +252,18 @@ public class StudentManager {
         return secondScorer;
     }
 
+    // Requirement 20 — Remove duplicate student names
+    public Set<String> uniqueStudent(){
+        HashSet<String>set=new HashSet<>();
+        for(Student student:students.values()){
+            String name=student.getName();
+            set.add(name);
+        }
+        return set;
+    }
+
+    // 
+
 
 
 }
